@@ -3,6 +3,12 @@ POC layout for MintBox
 
 ## Usage
 
+Install requirements
+
+```sh
+npm install
+```
+
 ### Step 1: Generate config
 
 You can generate a config by calling the `questions.js` file within the config module:
