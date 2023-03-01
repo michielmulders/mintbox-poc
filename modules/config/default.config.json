@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "description": "",
+    "admin_key": "",
+    "treasury_account_id": "",
+    "max_supply": 0,
+    "supply_type": "FINITE",
+    "custom_fees": {
+        "fixed_fees": [
+            {
+                "fee": 0,
+                "receiver_id": "",
+                "token_id": 0
+            }
+        ]
+    }
+}
