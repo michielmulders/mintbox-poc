@@ -1,6 +1,7 @@
 // import state
 const state = require('../state');
 const eventsModule = require('../events');
+const storageModule = require('../storage');
 
 /**
  * @desc Mint an NFT and update state
@@ -17,6 +18,10 @@ const mintNFT = (amount) => {
     if (appState.supply_type === "INFINITE" || (appState.supply_type === "FINITE" && (appState.current_supply + amount) < appState.max_supply)) {
         // Mint
         // placeholder for minting NFT on Hedera
+
+        // Store image
+        const storageProvider = storageModule[appState.storage_provider];
+        storageProvider.store("myimage.jpg");
         
         // Store event and update state
         eventsModule.storeEvent({

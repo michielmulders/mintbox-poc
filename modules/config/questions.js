@@ -29,6 +29,11 @@ const questions = [
         }
         return true;
     }
+  },
+  {
+    type: 'input',
+    name: 'storage_provider',
+    message: 'What is the storage provider you want to use?'
   }
 ];
 
@@ -45,6 +50,7 @@ async function askQuestions() {
     results.set('max_supply', answers.max_supply);
     results.set('supply_type', answers.supply_type);
     results.set('custom_fees', answers.custom_fees);
+    results.set('storage_provider', answers.storage_provider);
     
     configModule.processConfig(results);
   } catch (error) {
