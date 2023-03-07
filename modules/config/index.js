@@ -25,6 +25,7 @@ const processConfig = answers => {
     defaultConfig.supply_type = answers.get('supply_type') ? 'INFINITE' : 'FINITE';
     defaultConfig.custom_fees.fixed_fees[0].fee = answers.get('custom_fees');
     defaultConfig.storage_provider = answers.get('storage_provider');
+    defaultConfig.network = answers.get('network');
 
     storeConfig(defaultConfig);
 }

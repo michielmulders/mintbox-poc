@@ -1,1 +1,1 @@
-{"name":"Michiel","description":"","admin_key":"","treasury_account_id":"","max_supply":100,"supply_type":"INFINITE","custom_fees":{"fixed_fees":[{"fee":10,"receiver_id":"","token_id":0}]},"storage_provider":"ipfs","current_supply":10,"owners":[]}
+{"network":"testnet","name":"Michiel","description":"","admin_key":"","treasury_account_id":"","max_supply":100,"supply_type":"INFINITE","custom_fees":{"fixed_fees":[{"fee":10,"receiver_id":"","token_id":0}]},"storage_provider":"ipfs","current_supply":0,"owners":[]}

@@ -34,6 +34,12 @@ const questions = [
     type: 'input',
     name: 'storage_provider',
     message: 'What is the storage provider you want to use?'
+  },
+  {
+    type: 'list',
+    name: 'network',
+    message: 'Which network do you want to use?',
+    choices: ['mainnet', 'testnet']
   }
 ];
 
@@ -51,6 +57,7 @@ async function askQuestions() {
     results.set('supply_type', answers.supply_type);
     results.set('custom_fees', answers.custom_fees);
     results.set('storage_provider', answers.storage_provider);
+    results.set('network', answers.network);
     
     configModule.processConfig(results);
   } catch (error) {

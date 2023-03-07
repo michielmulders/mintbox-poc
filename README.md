@@ -27,6 +27,8 @@ Answer the questions to generate a configuration for your NFT collection:
 ? What is the storage provider you want to use? ipfs
 ```
 
+**Note: You can copy the `config.json` file and import it into a new project. It contains all settings to run your project within a new project environment. Make sure to copy your data like image and metadata files if you have created those.**
+
 #### Add custom storage components
 
 This is a sample interface for the storage component which allows devs to create their own interface and export it with their custom name. 
