@@ -31,10 +31,16 @@ function handleTransfer() {
     });
 }
 
+function handleSwitch(input) {
+  console.log('Switching to network: ' + input);
+  console.log('Function not implemented');
+}
+
 function handleHelp() {
   console.log('Usage:');
   console.log('  mintbox mint <number>');
   console.log('  mintbox transfer');
+  console.log('  mintbox switch <network>');
 }
 
 function handleUnknownCommand() {
@@ -57,6 +63,9 @@ switch (command) {
     break;
   case 'transfer':
     handleTransfer(input.join(' '));
+    break;
+  case 'switch':
+    handleSwitch(input.join(' '));
     break;
   case 'help':
     handleHelp();
