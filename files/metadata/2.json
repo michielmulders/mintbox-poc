@@ -1,0 +1,10 @@
+{
+    "name": "Bored Hederas Club",
+    "description": "NFT project cloning bored apes",
+    "type": "image/png",
+    "image": "https://mysite.com/fullspec/2",
+    "properties": {
+        "website": "https://mysite.com/nft/2"
+    }
+}
+  

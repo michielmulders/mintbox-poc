@@ -6,7 +6,7 @@ const path = require('path');
 const readline = require('readline');
 const csv = require('csv-parser');
 
-const { transactionsModule } = require('./modules');
+const { transactionsModule, metadataModule } = require('./modules');
 
 /* Command handlers */
 function handleMint(input) {
@@ -41,6 +41,7 @@ function handleHelp() {
   console.log('  mintbox mint <number>');
   console.log('  mintbox transfer');
   console.log('  mintbox switch <network>');
+  console.log('  mintbox metadata');
 }
 
 function handleUnknownCommand() {
@@ -66,6 +67,9 @@ switch (command) {
     break;
   case 'switch':
     handleSwitch(input.join(' '));
+    break;
+  case 'metadata':
+    metadataModule.generateMetadata();
     break;
   case 'help':
     handleHelp();

@@ -70,6 +70,8 @@ You can use the CLI like this:
 Usage:
   mintbox mint <number>
   mintbox transfer
+  mintbox switch <network>
+  mintbox metadata
 ```
 
 If you are unable to use the CLI tool like this, make sure to give it executable rights:
@@ -97,3 +99,51 @@ Finished reading the CSV file.
 ```
 
 **This command shows how we can use specific files as input/output for commands without having to upload a lot of data via the CLI.**
+
+#### Command 3: Switch
+
+(this command is not implemented but added as a reference) Here you can switch the network for the project. 
+
+#### Command 4: Metadata
+
+The metadata command makes use of the [Mustache package](https://www.npmjs.com/package/mustache) which lets you create logic-less templates (interpolation using this format: `{{myVar}}`). 
+
+The `/modules/metadata/metadata.json` file represents the template for the metadata.
+
+```json
+{
+    "name": "Bored Hederas Club",
+    "description": "NFT project cloning bored apes",
+    "type": "image/png",
+    "image": "{{image}}",
+    "properties": {
+        "website": "{{website}}"
+    }
+}
+```
+
+Next, you define the metadata values for each NFT in the `/files/metadata.csv` file.
+
+```csv
+image,website
+https://mysite.com/fullspec/1,https://mysite.com/nft/1
+https://mysite.com/fullspec/2,https://mysite.com/nft/2
+```
+
+When you execute the `./mintbox.js metadata` command, it will interpolate these values and store the new metadata files in the `/files/metadata/` folder. Here's an example output for the first NFT in the collection.
+
+```json
+{
+    "name": "Bored Hederas Club",
+    "description": "NFT project cloning bored apes",
+    "type": "image/png",
+    "image": "https://mysite.com/fullspec/1",
+    "properties": {
+        "website": "https://mysite.com/nft/1"
+    }
+}
+```
+
+After each metadata file has been interpolated, we check the metadata structure against Token Metadata JSON Schema V2 using the [Hedera NFT Utilities](https://github.com/hashgraph/hedera-nft-utilities) package.
+
+If you make a mistake against the schema, the error will be printed but the metadata will still be created. It's up to the user to make changes to their metadata or ignore the errors when they know what they are doing.
